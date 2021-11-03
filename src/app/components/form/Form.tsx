@@ -1,10 +1,11 @@
 import React from 'react';
+import Title from '../title/Title';
 import styles from './Form.module.css';
 
 function Form(): JSX.Element {
   return (
     <form className={styles.form}>
-      <h1 className={styles.form__title}>Bergfest</h1>
+      <Title text="Bergfest" />
       <input
         type="text"
         className={styles.form__text}
