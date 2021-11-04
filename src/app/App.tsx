@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './App.module.css';
-import Form from './components/form/Form';
+import Registration from './components/form/Form';
 
 function App(): JSX.Element {
+  const [selectedUserName, setSelectedUserName] = useState<string | null>(null);
+
   return (
     <div className={styles.backgroundImage}>
       <main className={styles.container}>
-        <Form />
+        {/* <Registration onSelectUserName={(userName) => setSelectedUserName(userName)} /> same as: */}
+        <Registration onSelectUserName={setSelectedUserName} />
       </main>
     </div>
   );

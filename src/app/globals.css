@@ -8,8 +8,9 @@
   /* COLORS */
   --color-primary: #8fc3dc;
   --color-text: white;
-  --color-background: #050c34;
+  --color-background: #262730;
   --color-secondary: #f70552;
+  --color-neutral: #bdbdbd;
 }
 
 body {

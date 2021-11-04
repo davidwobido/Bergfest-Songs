@@ -2,9 +2,21 @@ import React, { FormEvent, useState } from 'react';
 import Title from '../title/Title';
 import styles from './Form.module.css';
 
-function Form(): JSX.Element {
+type User = {
+  id: number;
+  firstName: string;
+  lastName: string;
+};
+
+type RegistrationProps = {
+  onSelectUserName: (userName: string) => void; //void same as undefined
+};
+
+function Registration({ onSelectUserName }: RegistrationProps): JSX.Element {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [users, setUsers] = useState<User[]>([]);
+  // const [selectedUserName, setSelectedUserName] = useState<string | null>(null);
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -20,10 +32,31 @@ function Form(): JSX.Element {
     });
   }
 
-  console.log(firstName, lastName, firstName, lastName, firstName);
+  //Use useState to change users
+  async function handleSelectClick() {
+    const response = await fetch('https://json-server.machens.dev/users');
+    const newUsers = await response.json();
+    setUsers(newUsers);
+  }
+
+  // Generate UserOptions HTML-Element <option>Jane Doe</option>
+  const UserOptions = users.map((user) => (
+    <option key={user.id}>
+      {user.firstName} {user.lastName}
+    </option>
+  ));
+
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <Title text="Bergfest" />
+      <select
+        onClick={handleSelectClick}
+        className={styles.form__selector}
+        onChange={(event) => onSelectUserName(event.target.value)}
+      >
+        <option>Select a user</option>
+        {UserOptions}
+      </select>
       <input
         type="text"
         className={styles.form__text}
@@ -43,4 +76,4 @@ function Form(): JSX.Element {
   );
 }
 
-export default Form;
+export default Registration;
