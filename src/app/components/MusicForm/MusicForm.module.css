@@ -1,9 +1,9 @@
 .form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   column-gap: 0.5rem;
-  row-gap: 1rem;
+  row-gap: 1.25rem;
   place-items: center;
   border-radius: 1rem;
   border: 0.1rem solid;
@@ -18,25 +18,8 @@
   text-align: center;
 }
 
-.form__selector {
-  grid-column: 1/3;
-  grid-row: 2/3;
-  min-width: 20rem;
-  border-right: none;
-  border-left: none;
-  border-top: none;
-  border-bottom: solid 0.1rem var(--color-primary);
-  background-color: var(--color-text);
-  color: var(--color-primary);
-  padding-bottom: 0.5rem;
-}
-
-.form__selector:hover {
-  cursor: pointer;
-}
-
 .form__text {
-  grid-row: 3/4;
+  grid-row: 2/3;
   border-right: none;
   border-left: none;
   border-top: none;
@@ -44,14 +27,16 @@
   background-color: var(--color-text);
   color: var(--color-bright);
   padding: 0.5rem 0;
+  font-family: var(--font-primary);
 }
 
 .form__text::placeholder {
   color: var(--color-bright);
+  font-family: var(--font-primary);
 }
 
 .form__submit {
-  grid-row: 4/5;
+  grid-row: 3/4;
   grid-column: 1/3;
   color: var(--color-text);
   background-color: var(--color-primary);
@@ -63,7 +48,25 @@
   letter-spacing: 0.1rem;
 }
 
+.form__showSongs {
+  grid-row: 4/5;
+  grid-column: 1/3;
+  color: var(--color-text);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: 1.25rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+/* .form__showSongs, */
 .form__submit:hover {
   background-color: var(--color-bright);
   cursor: pointer;
+}
+
+.songList {
+  font-size: 0.5rem;
 }

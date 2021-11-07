@@ -1,0 +1,31 @@
+.songList {
+  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+  color: var(--color-bright);
+}
+
+.songList__title,
+.songList__artist {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  background-color: var(--color-inactive);
+}
+
+.songList__title {
+  font-size: 1rem;
+  padding-top: 1rem;
+  font-weight: 700;
+}
+
+.songList__artist {
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  padding-bottom: 1rem;
+}
+
+/* WHERE IS THIS ELEMENT? */
+.songList__boxes {
+  border-radius: 10rem;
+}
