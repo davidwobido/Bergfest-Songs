@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import styles from './App.module.css';
 import Registration from './components/form/Form';
 import Title from './components/title/Title';
-// import Library from './components/library/Library';
+import AddSong from './components/MusicForm/MusicForm';
 
 function App(): JSX.Element {
   const [selectedUserName, setSelectedUserName] = useState<string | null>(null);
 
   let content;
   if (selectedUserName) {
-    content = <p>Please add your songs</p>;
+    content = <AddSong />;
   } else {
     //  <Registration onSelectUserName={(userName) => setSelectedUserName(userName)} /> same as:
     content = <Registration onSelectUserName={setSelectedUserName} />;
