@@ -1,11 +1,53 @@
 .form {
-  padding: 0;
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_from_a_camera.jpg/800px-Black_from_a_camera.jpg');
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 0.5rem;
+  row-gap: 1.5rem;
+  place-items: center;
+  border-radius: 1rem;
+  border: 0.1rem solid;
+  background-color: var(--color-text);
+  color: var(--color-primary);
+  padding: 2.5rem;
 }
 
-h2 {
+.form__title {
+  grid-column: 1/3;
+  color: var(--color-bright);
+  text-align: center;
+}
+
+.form__text {
+  grid-row: 3/4;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom: solid 0.1rem var(--color-bright);
+  background-color: var(--color-text);
+  color: var(--color-bright);
+  padding: 0.5rem 0;
+}
+
+.form__text::placeholder {
+  color: var(--color-bright);
+}
+
+.form__submit {
+  grid-row: 4/5;
+  grid-column: 1/3;
+  color: var(--color-text);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 1.25rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.form__showSongs {
   font-size: 2rem;
+  grid-row: 4/5;
+  grid-column: 1/3;
 }

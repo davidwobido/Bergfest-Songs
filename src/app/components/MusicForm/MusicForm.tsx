@@ -40,7 +40,7 @@ function AddSong() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <h2>Add a song</h2>
+      <h2 className={styles.form__title}>Add a song</h2>
       <input
         type="text"
         className={styles.form__text}
@@ -56,8 +56,10 @@ function AddSong() {
         onChange={(event) => setTitle(event.target.value)}
       />
       <input type="submit" className={styles.form__submit} />
-      <section className={styles.Library}>
-        <button onClick={handleSelectClick}>Show added songs</button>{' '}
+      <section>
+        <button className={styles.form__showSongs} onClick={handleSelectClick}>
+          Show added songs
+        </button>{' '}
         <p>{songList}</p>
       </section>
     </form>
