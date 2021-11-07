@@ -40,7 +40,7 @@ function AddSong() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <h2 className={styles.form__title}>Add a song</h2>
+      <h2 className={styles.form__title}>Add a song to the list</h2>
       <input
         type="text"
         className={styles.form__text}
