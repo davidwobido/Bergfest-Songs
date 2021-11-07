@@ -56,6 +56,10 @@ function AddSong() {
         onChange={(event) => setTitle(event.target.value)}
       />
       <input type="submit" className={styles.form__submit} />
+      <section className={styles.Library}>
+        <button onClick={handleSelectClick}>Show added songs</button>{' '}
+        <p>{songList}</p>
+      </section>
     </form>
   );
 }

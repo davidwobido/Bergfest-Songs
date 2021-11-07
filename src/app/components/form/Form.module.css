@@ -1,37 +1,53 @@
 .form {
   display: grid;
-  background-color: var(--color-background);
-  color: var(--color-primary);
-  border-radius: 1rem;
-  padding: 2.5rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  row-gap: 1rem;
   column-gap: 0.5rem;
+  row-gap: 1.5rem;
   place-items: center;
+  border-radius: 1rem;
+  border: 0.1rem solid;
+  background-color: var(--color-text);
+  color: var(--color-primary);
+  padding: 2.5rem;
 }
 
 .form__selector {
   grid-column: 1/3;
   grid-row: 2/3;
-  background: var(--color-neutral);
-  padding: 0.5rem;
+  min-width: 20rem;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom: solid 0.1rem var(--color-primary);
+  background-color: var(--color-text);
+  color: var(--color-primary);
+  padding-bottom: 0.5rem;
 }
 
 .form__text {
   grid-row: 3/4;
-  border: none;
-  padding: 0.5rem 1.5rem;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom: solid 0.1rem var(--color-bright);
+  background-color: var(--color-text);
+  color: var(--color-bright);
+  padding: 0.5rem 0;
+}
+
+.form__text::placeholder {
+  color: var(--color-bright);
 }
 
 .form__submit {
   grid-row: 4/5;
   grid-column: 1/3;
-  color: var(--color-background);
+  color: var(--color-text);
   background-color: var(--color-primary);
-  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 0.625rem;
+  border-radius: 1.25rem;
+  padding: 0.75rem 2rem;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -39,4 +55,6 @@
 
 .form__title {
   grid-column: 1/3;
+  color: var(--color-bright);
+  text-align: center;
 }

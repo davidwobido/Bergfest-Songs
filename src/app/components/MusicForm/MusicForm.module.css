@@ -1,3 +1,11 @@
+.form {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_from_a_camera.jpg/800px-Black_from_a_camera.jpg');
+}
+
 h2 {
   font-size: 2rem;
 }

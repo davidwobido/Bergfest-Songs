@@ -47,7 +47,12 @@ function Registration({ onSelectUserName }: RegistrationProps): JSX.Element {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <h2 className={styles.form__title}> Select a user or sumbit your name</h2>
+      <h2 className={styles.form__title}>
+        {' '}
+        Select a user or
+        <br />
+        submit your name
+      </h2>
       <select
         onClick={handleSelectClick}
         className={styles.form__selector}

@@ -9,19 +9,23 @@
 
 :root {
   /* COLORS */
-  --color-primary: #8fc3dc;
-  --color-text: white;
-  --color-background: #262730;
-  --color-secondary: #f70552;
+  --color-primary: #cdf564;
+  --color-secondary: #4b917d;
+  --color-accent: #f037a5;
+  --color-bright: rgb(246 247 247);
   --color-neutral: #bdbdbd;
+  --color-text: #0e0e0e;
+  --color-inactive: #414141;
 }
 
-title {
+h1 {
+  margin: 0;
+  margin-block-start: 0;
   font-family: 'Archivo Black', 'Helvetica Neue', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.8rem;
-  color: var(--color-text);
+  color: var(--color-primary);
 }
 
 body {
