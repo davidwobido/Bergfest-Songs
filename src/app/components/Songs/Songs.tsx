@@ -21,11 +21,13 @@ function ShowSongs() {
 
   /* Create song list from API */
   const songList = songs.map((song) => (
-    <div key={song.id} className={styles.songList}>
-      <div className={styles.songList__artist}>{song.artist}</div>
-      <div className={styles.songList__title}>by {song.title}</div>
+    <div key={song.id} className={styles.songList__boxes}>
+      <div className={styles.songList__title}>{song.title}</div>
+      <div className={styles.songList__artist}>by {song.artist}</div>
     </div>
   ));
+
+  // WHERE IS THIS ELEMENT?
 
   return (
     <section>
