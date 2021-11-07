@@ -1,6 +1,6 @@
 .backgroundImage {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
   background-image: url('../lib/imgs/photo-1511180427842-5878e7a53e2c.jpg');
   background-color: var(--color-background);
   background-size: cover;
@@ -9,8 +9,9 @@
 
 .container {
   display: grid;
-  height: 100vh;
   justify-items: center;
   align-content: center;
-  gap: 3rem;
+  gap: 2rem;
+  padding: 30px;
+  background-color: var(--color-background);
 }

@@ -1,16 +1,9 @@
 import React, { FormEvent, useState } from 'react';
 import styles from './MusicForm.module.css';
 
-type Song = {
-  id: number;
-  artist: string;
-  title: string;
-};
-
 function AddSong() {
   const [title, setTitle] = useState('');
   const [artist, setArtist] = useState('');
-  const [songs, setSongs] = useState<Song[]>([]);
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -25,18 +18,6 @@ function AddSong() {
       }),
     });
   }
-
-  async function handleSelectClick() {
-    const response = await fetch('https://json-server.machens.dev/songs');
-    const newSongs = await response.json();
-    setSongs(newSongs);
-  }
-
-  const songList = songs.map((song) => (
-    <ul key={song.id}>
-      {song.artist}'—'{song.title}
-    </ul>
-  ));
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
@@ -56,12 +37,6 @@ function AddSong() {
         onChange={(event) => setTitle(event.target.value)}
       />
       <input type="submit" className={styles.form__submit} />
-      <section>
-        <button className={styles.form__showSongs} onClick={handleSelectClick}>
-          Show added songs
-        </button>
-        <p className={styles.songList}>{songList}</p>
-      </section>
     </form>
   );
 }
