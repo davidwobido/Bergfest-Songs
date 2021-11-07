@@ -1,6 +1,7 @@
 .form {
   display: grid;
-  background-color: rgb(249 233 194);
+  background-color: var(--color-background);
+  color: var(--color-primary);
   border-radius: 1rem;
   padding: 2.5rem;
   grid-template-columns: 1fr 1fr;
@@ -10,21 +11,32 @@
   place-items: center;
 }
 
-.form__text {
+.form__selector {
+  grid-column: 1/3;
   grid-row: 2/3;
+  background: var(--color-neutral);
+  padding: 0.5rem;
+}
+
+.form__text {
+  grid-row: 3/4;
   border: none;
   padding: 0.5rem 1.5rem;
 }
 
 .form__submit {
-  grid-row: 3/4;
-  color: white;
-  background-color: rgb(35 103 106);
+  grid-row: 4/5;
   grid-column: 1/3;
+  color: var(--color-background);
+  background-color: var(--color-primary);
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 0.625rem;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+}
+
+.form__title {
+  grid-column: 1/3;
 }
