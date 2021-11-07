@@ -36,3 +36,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
+
+.form__title {
+  grid-column: 1/3;
+}

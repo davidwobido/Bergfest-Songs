@@ -1,5 +1,4 @@
 import React, { FormEvent, useState } from 'react';
-import Title from '../title/Title';
 import styles from './Form.module.css';
 
 type User = {
@@ -48,7 +47,7 @@ function Registration({ onSelectUserName }: RegistrationProps): JSX.Element {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <Title text="Bergfest" />
+      <h2 className={styles.form__title}> Select a user or sumbit your name</h2>
       <select
         onClick={handleSelectClick}
         className={styles.form__selector}
