@@ -59,8 +59,8 @@ function AddSong() {
       <section>
         <button className={styles.form__showSongs} onClick={handleSelectClick}>
           Show added songs
-        </button>{' '}
-        <p>{songList}</p>
+        </button>
+        <p className={styles.songList}>{songList}</p>
       </section>
     </form>
   );

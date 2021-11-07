@@ -21,7 +21,6 @@ function App(): JSX.Element {
         <Title
           text={selectedUserName ? `Hi ${selectedUserName}` : 'Bergfest'}
         />
-
         {content}
       </main>
     </div>
