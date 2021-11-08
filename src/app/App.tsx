@@ -25,7 +25,7 @@ function App(): JSX.Element {
     if (selectedUserName) {
       sessionStorage.setItem('selectedUserName', selectedUserName);
     } else {
-      localStorage.removeItem('selectedUserName');
+      sessionStorage.removeItem('selectedUserName');
     }
   }, [selectedUserName]);
 
