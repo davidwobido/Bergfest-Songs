@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import styles from './MusicForm.module.css';
 
 function AddSong() {
@@ -18,6 +18,10 @@ function AddSong() {
       }),
     });
   }
+
+  useEffect(() => {
+    console.log('Song added');
+  }, [handleSubmit]);
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
