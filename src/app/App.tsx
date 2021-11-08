@@ -6,7 +6,9 @@ import AddSong from './components/MusicForm/MusicForm';
 import ShowSongs from './components/Songs/Songs';
 
 function App(): JSX.Element {
-  const [selectedUserName, setSelectedUserName] = useState<string | null>(null);
+  const [selectedUserName, setSelectedUserName] = useState<string | null>(
+    sessionStorage.getItem('selectedUserName')
+  );
 
   let content;
   let songs;
@@ -20,6 +22,14 @@ function App(): JSX.Element {
   }
 
   useEffect(() => {
+    if (selectedUserName) {
+      sessionStorage.setItem('selectedUserName', selectedUserName);
+    } else {
+      localStorage.removeItem('selectedUserName');
+    }
+  }, [selectedUserName]);
+
+  useEffect(() => {
     document.title = selectedUserName ? `Hi ${selectedUserName}` : `Bergfest`;
   });
 
@@ -31,6 +41,14 @@ function App(): JSX.Element {
         />
         {content}
         {songs}
+        {selectedUserName !== null && (
+          <button
+            className={styles.logOutButton}
+            onClick={() => setSelectedUserName(null)}
+          >
+            Logout user
+          </button>
+        )}
       </main>
     </div>
   );
