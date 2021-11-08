@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import styles from './Form.module.css';
 
 type User = {
@@ -15,12 +15,11 @@ function Registration({ onSelectUserName }: RegistrationProps): JSX.Element {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [users, setUsers] = useState<User[]>([]);
-  // const [selectedUserName, setSelectedUserName] = useState<string | null>(null);
 
-  function handleSubmit(event: FormEvent) {
+  async function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
-    fetch('https://json-server.machens.dev/users', {
+    await fetch('https://json-server.machens.dev/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
 
@@ -29,14 +28,21 @@ function Registration({ onSelectUserName }: RegistrationProps): JSX.Element {
         lastName: lastName,
       }),
     });
+    refreshUsers();
+    setFirstName('');
+    setLastName('');
   }
 
   //Use useState to change users
-  async function handleSelectClick() {
+  async function refreshUsers() {
     const response = await fetch('https://json-server.machens.dev/users');
     const newUsers = await response.json();
     setUsers(newUsers);
   }
+
+  useEffect(() => {
+    refreshUsers();
+  }, []);
 
   // Generate UserOptions HTML-Element <option>Jane Doe</option>
   const UserOptions = users.map((user) => (
@@ -54,7 +60,6 @@ function Registration({ onSelectUserName }: RegistrationProps): JSX.Element {
         submit your name
       </h2>
       <select
-        onClick={handleSelectClick}
         className={styles.form__selector}
         onChange={(event) => onSelectUserName(event.target.value)}
       >

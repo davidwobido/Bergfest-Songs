@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Songs.module.css';
 
 type Song = {
@@ -11,13 +11,15 @@ function ShowSongs() {
   const [songs, setSongs] = useState<Song[]>([]);
 
   /*Fetch songs from API */
-  async function handleSelectClick() {
+  async function handleFetchSongs() {
     const response = await fetch('https://json-server.machens.dev/songs');
     const newSongs = await response.json();
     setSongs(newSongs);
   }
 
-  handleSelectClick();
+  useEffect(() => {
+    handleFetchSongs();
+  }, []);
 
   /* Create song list from API */
   const songList = songs.map((song) => (
@@ -27,11 +29,9 @@ function ShowSongs() {
     </div>
   ));
 
-  // WHERE IS THIS ELEMENT?
-
   return (
     <section>
-      <p className={styles.songList}>{songList}</p>
+      <div className={styles.songList}>{songList}</div>
     </section>
   );
 }

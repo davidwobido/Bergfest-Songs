@@ -1,11 +1,10 @@
-.backgroundImage {
-  /* width: 100vw;
-  height: 100vh; */
+/* .backgroundImage {
+  width: 100vw;
+  height: 100vh;
   background-image: url('../lib/imgs/photo-1511180427842-5878e7a53e2c.jpg');
-  background-color: var(--color-background);
   background-size: cover;
   background-repeat: repeat;
-}
+} */
 
 .container {
   display: grid;
@@ -14,4 +13,17 @@
   gap: 2rem;
   padding: 30px;
   background-color: var(--color-background);
+}
+
+.logOutButton {
+  grid-row: 2/3;
+  color: var(--color-neutral);
+  background: none;
+  border: none;
+}
+
+.logOutButton:hover {
+  color: var(--color-accent);
+  cursor: pointer;
+  text-decoration: underline;
 }
